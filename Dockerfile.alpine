@@ -50,6 +50,7 @@ RUN apk add         \
     py3-pip         \
     freeglut-dev    \
     curl-dev        \
+    tar             \
     emacs
 
 RUN rm -rf /var/cache/apk/*
