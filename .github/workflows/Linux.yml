@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        OS: ["ubuntu20.04", "alpine"]
+        OS: ["ubuntu", "alpine"]
         ILC_INSTALL_VERSION: ["v02-01-02"]
         INSTALL_MODE: ["LATEST"]
         
