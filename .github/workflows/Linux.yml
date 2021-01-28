@@ -20,4 +20,4 @@ jobs:
     - name: Build docker image OS
       run: docker build --tag ilcsoft/env-ubuntu18.04-gcc9.1 --file Dockerfile.ubuntu18.04-gcc9.1 .
     - name: Build docker base
-      run: docker build --file Dockerfile.base --tag ilcsoft/base-ubuntu18.04-gcc9.1 --build-arg image=env-ubuntu18.04-gcc9.1 --build-arg compile_ncores=2 --build-arg ilcinstall_version=v02-01-00 --build-arg install_mode=LASTEST
+      run: docker build --file Dockerfile.base --tag ilcsoft/base-ubuntu18.04-gcc9.1 --build-arg image=env-ubuntu18.04-gcc9.1 --build-arg compile_ncores=2 --build-arg ilcinstall_version=v02-01-00 --build-arg install_mode=LASTEST .
