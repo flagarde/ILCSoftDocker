@@ -19,7 +19,10 @@ RUN apt-get -y update &&                              \
 RUN apt-get -y update &&        \
     apt-get -y install          \
     build-essential             \
-    mariadb-connector-c         \
+    libmariadb-dev              \
+    libmariadbclient-dev-compat \
+    libmariadb-client-lgpl-dev  \
+    mariadb-server              \
     apt-utils                   \
     gcc-10 g++-10               \
     openssl                     \
