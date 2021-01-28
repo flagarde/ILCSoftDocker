@@ -21,7 +21,6 @@ RUN apt-get -y update &&        \
     build-essential             \
     libmariadb-dev              \
     libmariadbclient-dev-compat \
-    libmariadb-client-lgpl-dev  \
     mariadb-server              \
     apt-utils                   \
     gcc-10 g++-10               \
