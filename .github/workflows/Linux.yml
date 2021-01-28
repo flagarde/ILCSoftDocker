@@ -12,7 +12,7 @@ env:
   ILC_INSTALL_VERSION: "v02-01"
   INSTALL_MODE: "LATEST"
   # Dockerfile.ubuntu18.04-gcc9.1 Docker.alpine
-  OS: "alpine"
+  OS: "ubuntu18.04-gcc9.1"
 
 jobs:
 
