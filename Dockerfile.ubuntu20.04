@@ -19,9 +19,7 @@ RUN apt-get -y update &&                              \
 RUN apt-get -y update &&        \
     apt-get -y install          \
     build-essential             \
-    libmariadb-dev              \
-    libmariadbclient-dev-compat \
-    mariadb-server              \
+    libmysqlclient-dev          \
     apt-utils                   \
     gcc-10 g++-10               \
     openssl                     \
