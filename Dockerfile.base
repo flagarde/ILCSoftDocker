@@ -12,7 +12,7 @@ ARG install_mode=LATEST
 WORKDIR ${HOME}
 RUN git clone --depth 1 --branch ${ilcinstall_version} https://github.com/${ilcinstall_user}/iLCInstall.git iLCInstall/base
 WORKDIR ${HOME}/iLCInstall/base
-RUN sed -i 's#self.download.url = "http://geant4.cern.ch/support/source/geant4.%s.tar.gz" % self.version#self.download.url = "http://cern.ch/geant4-data/releases/patch_geant4.%s.tar.gz" % self.version#g' ./ilcsoft/geant4.py 
+RUN sed -i 's#self.download.url = "http://geant4.cern.ch/support/source/geant4.%s.tar.gz" % self.version#self.download.url = "http://cern.ch/geant4-data/releases/geant4.%s.tar.gz" % self.version#g' ./ilcsoft/geant4.py 
 RUN ./ilcsoft-install -i --install-prefix ${ILCSOFT} -j ${compile_ncores} releases/${install_mode}/release-base.cfg
 
 # Start the image with BASH by default
