@@ -23,9 +23,7 @@ jobs:
       fail-fast: false
     steps:
     - name: Checkout
-      uses: actions/checkout@v2.3.4
-    - name: Change geant4 location
-      run: sed -i 's#self.download.url = "http://geant4.cern.ch/support/source/geant4.%s.tar.gz" % self.version#self.download.url = "http://cern.ch/geant4-data/releases/patch_geant4.%s.tar.gz" % self.version#g' ./ilcsoft/geant4.py      
+      uses: actions/checkout@v2.3.4  
     - name: Build docker image OS
       run: docker build --tag os --file Dockerfile.${{ env.OS }} .
     - name: Build docker base
