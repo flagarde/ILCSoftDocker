@@ -9,10 +9,6 @@ on:
 
 env:
   NBR_CORE: 2
-  ILC_INSTALL_VERSION: v02-01-02
-  INSTALL_MODE: LATEST
-  # Dockerfile.ubuntu18.04-gcc9.1 Docker.alpine
-  OS: ubuntu20.04
 
 jobs:
 
@@ -21,10 +17,15 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
+      matrix:
+        OS: ["ubuntu20.04", "alpine"]
+        ILC_INSTALL_VERSION: ["v02-01-02"]
+        INSTALL_MODE: ["LATEST"]
+        
     steps:
     - name: Checkout
       uses: actions/checkout@v2.3.4  
     - name: Build docker image OS
-      run: docker build --tag os --file Dockerfile.${{ env.OS }} .
+      run: docker build --tag os --file Dockerfile.${{ matrix.OS }} .
     - name: Build docker base
-      run: docker build --file Dockerfile.base --tag ilcsoft/base-ubuntu18.04-gcc9.1 --build-arg image=os --build-arg compile_ncores=${{ env.NBR_CORE }} --build-arg ilcinstall_version=${{ env.ILC_INSTALL_VERSION }} --build-arg install_mode=${{ env.INSTALL_MODE }} .
+      run: docker build --file Dockerfile.base --tag base --build-arg image=os --build-arg compile_ncores=${{ env.NBR_CORE }} --build-arg ilcinstall_version=${{ matrix.ILC_INSTALL_VERSION }} --build-arg install_mode=${{ matrix.INSTALL_MODE }} .
