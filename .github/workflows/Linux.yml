@@ -7,6 +7,13 @@ on:
     #Every Sunday at midnight
     - cron:  '0 0 * * 0'
 
+env:
+  NBR_CORE: 2
+  ILC_INSTALL_VERSION: "v02-01"
+  INSTALL_MODE: "LATEST"
+  # Dockerfile.ubuntu18.04-gcc9.1 Docker.alpine
+  OS: "alpine"
+
 jobs:
 
   build:
@@ -18,6 +25,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.3.4
     - name: Build docker image OS
-      run: docker build --tag os --file Dockerfile.ubuntu18.04-gcc9.1 .
+      run: docker build --tag os --file Dockerfile.${{ env.OS }} .
     - name: Build docker base
-      run: docker build --file Dockerfile.base --tag ilcsoft/base-ubuntu18.04-gcc9.1 --build-arg image=os --build-arg compile_ncores=2 --build-arg ilcinstall_version=v02-01 --build-arg install_mode=LATEST .
+      run: docker build --file Dockerfile.base --tag ilcsoft/base-ubuntu18.04-gcc9.1 --build-arg image=os --build-arg compile_ncores=${{ env.NBR_CORE }} --build-arg ilcinstall_version=${{ env.ILC_INSTALL_VERSION }} --build-arg install_mode=${{ env.INSTALL_MODE }} .
