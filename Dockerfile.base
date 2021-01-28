@@ -4,7 +4,7 @@ FROM ${image}
 # Possible image build arguments 
 ARG compile_ncores=8
 ARG ilcinstall_version=master
-ARG ilcinstall_user=iLCSoft
+ARG ilcinstall_user=flagarde
 # LATEST or HEAD
 ARG install_mode=LATEST
 
