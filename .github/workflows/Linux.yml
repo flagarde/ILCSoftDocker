@@ -18,4 +18,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.3.4
     - name: Build docker image OS
-      run: docker build -t local -f Dockerfile.ubuntu18.04-gcc9.1
+      run: docker build -t local -f Dockerfile.ubuntu18.04-gcc9.1 .
