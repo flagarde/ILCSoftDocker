@@ -16,52 +16,51 @@ RUN apt-get -y update &&                              \
     apt-get -y install software-properties-common &&  \
     add-apt-repository -y ppa:ubuntu-toolchain-r/test
 
-RUN apt-get -y update &&  \
-    apt-get -y install    \
-    build-essential       \
-    mariadb-server        \
-    mariadb-client        \
-    libmariadb-dev        \
-    libmariadbclient-dev  \
-    libmariadbclient      \
-    apt-utils             \
-    gcc-10 g++-10         \
-    openssl               \
-    subversion            \
-    doxygen               \
-    texlive               \
-    ghostscript           \
-    texlive-latex-extra   \
-    libssl-dev            \
-    libsqlite-dev         \
-    zlib1g-dev            \
-    wget                  \
-    git                   \
-    tree                  \
-    libhdf5-dev           \
-    jq                    \
-    libbz2-dev            \
-    libgdbm-dev           \
-    libx11-dev            \
-    libxpm-dev            \
-    libxft-dev            \
-    libxmu-dev            \
-    libxext-dev           \
-    xlibmesa-glu-dev      \
-    libglew-dev           \
-    libftgl-dev           \
-    libncurses-dev        \
-    liblzma-dev           \
-    libreadline-dev       \
-    uuid uuid-dev         \
-    libffi-dev            \
-    bash-completion       \
-    tk-dev                \
-    libxml2-dev           \
-    python-dev            \
-    python3-pip           \
-    freeglut3-dev         \
-    curl                  \
+RUN apt-get -y update &&        \
+    apt-get -y install          \
+    build-essential             \
+    mariadb-server              \
+    mariadb-client              \
+    libmariadb-dev-compat       \
+    libmariadbclient-dev-compat \
+    apt-utils                   \
+    gcc-10 g++-10               \
+    openssl                     \
+    subversion                  \
+    doxygen                     \
+    texlive                     \
+    ghostscript                 \
+    texlive-latex-extra         \
+    libssl-dev                  \
+    libsqlite-dev               \
+    zlib1g-dev                  \
+    wget                        \
+    git                         \
+    tree                        \
+    libhdf5-dev                 \
+    jq                          \
+    libbz2-dev                  \
+    libgdbm-dev                 \
+    libx11-dev                  \
+    libxpm-dev                  \
+    libxft-dev                  \
+    libxmu-dev                  \
+    libxext-dev                 \
+    xlibmesa-glu-dev            \
+    libglew-dev                 \
+    libftgl-dev                 \
+    libncurses-dev              \
+    liblzma-dev                 \
+    libreadline-dev             \
+    uuid uuid-dev               \
+    libffi-dev                  \
+    bash-completion             \
+    tk-dev                      \
+    libxml2-dev                 \
+    python-dev                  \
+    python3-pip                 \
+    freeglut3-dev               \
+    curl                        \
     emacs
 
 RUN apt-get clean
