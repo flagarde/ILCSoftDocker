@@ -9,10 +9,10 @@ on:
 
 env:
   NBR_CORE: 2
-  ILC_INSTALL_VERSION: "v02-01"
-  INSTALL_MODE: "LATEST"
+  ILC_INSTALL_VERSION: v02-01
+  INSTALL_MODE: LATEST
   # Dockerfile.ubuntu18.04-gcc9.1 Docker.alpine
-  OS: "ubuntu18.04-gcc9.1"
+  OS: ubuntu18.04-gcc9.1
 
 jobs:
 
