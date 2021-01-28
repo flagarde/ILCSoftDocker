@@ -8,7 +8,7 @@ on:
     - cron:  '0 0 * * 0'
 
 env:
-  NBR_CORE: 2
+  NBR_CORE: 25
 
 jobs:
 
