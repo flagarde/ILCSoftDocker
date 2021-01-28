@@ -1,0 +1,71 @@
+FROM ubuntu:20.04
+
+LABEL product="iLCSoft"
+LABEL maintainer="remi.ete@desy.de"
+LABEL description="Image setting up the OS flavor, compiler version and any other environement for building iLCSoft 'base' and 'ilcsoft' stacks"
+LABEL os="ubuntu 20.04"
+
+# Perform the installation as root:
+USER root
+ENV HOME /home/ilc
+ENV ILCSOFT /home/ilc/ilcsoft
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Add recent gcc compilers repo first
+RUN apt-get -y update && \
+    apt-get -y install software-properties-common && \
+    add-apt-repository -y ppa:ubuntu-toolchain-r/test
+
+RUN apt-get -y update && \
+    apt-get -y install \
+    	build-essential \
+    	mariadb-server \
+	    gcc-10 g++-10 \
+	    openssl \
+	    subversion \
+	    doxygen \
+	    texlive \
+	    ghostscript \
+	    texlive-latex-extra \
+	    libssl-dev \
+	    libsqlite-dev \
+	    zlib1g-dev \
+	    wget \
+	    git \
+	    tree \
+	    libhdf5-dev \
+	    jq \
+	    libbz2-dev \
+	    libgdbm-dev \
+	    libx11-dev \
+	    libxpm-dev \
+	    libxft-dev \
+	    libxmu-dev \
+	    libxext-dev \
+	    xlibmesa-glu-dev \
+	    libglew-dev \
+	    libftgl-dev \
+	    libncurses-dev \
+	    liblzma-dev \
+	    libreadline-dev \
+	    uuid uuid-dev \
+	    libffi-dev \
+	    bash-completion \
+	    tk-dev \
+	    libmysqlclient-dev \
+	    libxml2-dev \
+	    python-dev \
+	    python-pip \
+	    freeglut3-dev \
+	    curl \
+	    emacs
+
+RUN apt-get clean
+
+WORKDIR ${HOME}
+
+ENV PATH ${HOME}/python/bin:${PATH}
+ENV LD_LIBRARY_PATH ${HOME}/python/lib:${LD_LIBRARY_PATH}
+
+# Start the image with BASH by default
+CMD ["/bin/bash"]
