@@ -45,6 +45,9 @@ RUN apk add         \
     bash-completion \
     tk-dev          \
     mysql-client    \
+    mysql           \
+    curl            \
+    gzip            \
     libxml2-dev     \
     python3-dev     \
     py3-pip         \
