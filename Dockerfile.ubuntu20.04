@@ -56,7 +56,6 @@ RUN apt-get -y update &&  \
     libffi-dev            \
     bash-completion       \
     tk-dev                \
-    libmysqlclient-dev    \
     libxml2-dev           \
     python-dev            \
     python3-pip           \
